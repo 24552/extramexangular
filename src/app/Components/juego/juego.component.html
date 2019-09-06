@@ -1,0 +1,59 @@
+
+
+     
+  <td>usuario: {{usuario}}</td>           
+ <td>puntos:</td>
+<td>{{puntaje}}</td>      
+
+<div>      
+
+<div class="row"> 
+    <table class="table table-hover">
+            <h1>*PREGUNTA <span class="badge badge-secondary">TOCA EL BOTON PRIMERO</span></h1>
+        <tbody>
+            <tr >
+              <h1>{{id}}</h1>
+                <h1>*{{pregunta}}</h1>
+                
+                        
+
+                
+                
+
+            </tr>
+            
+        </tbody>
+</table>
+</div>
+</div>
+
+
+
+<div class="row">
+        
+    <table class="table table-responsive ">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th scope="col">.......................</th>
+                <th scope="col">respuesta..............</th>
+                <th scope="col">seleccionar respuesta...</th>
+      
+           
+        </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let rs of respuesta, let index = index ">
+                <td>.....................</td>
+                
+                <td>{{rs.respuesta}}</td>
+                <td><button (click)="guardarpuntos(rs.puntos)" [disabled]="tl" class="btn btn-primary" style="margin-top: -10px;">seleccionar</button></td>
+            </tr>
+            
+        </tbody>
+</table>
+</div>
+
+<div class="text-center"> 
+<button type="button"  [disabled]="t2" (click)="enviar1()" class="btn btn-danger btn-circle btn-xl button-center"></button>
+</div>
+

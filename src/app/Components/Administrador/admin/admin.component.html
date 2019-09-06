@@ -1,0 +1,85 @@
+<button class="col-2 btn btn-primary offset-2 ml-3" data-toggle="modal" data-target="#agregarpreguntas"> <li class="fa fa-plus"> </li> Añadir Preguntas</button>
+      <!-- Formulario de lass preguntas -->
+<div class="modal fade" id="agregarpreguntas" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir preguntas</h5>
+          <button id="closePreguntasModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="this.form_nuevapregunta" >
+            <div class="form-group">
+              <label for="pregunta_pregunta">pregunta</label>
+              <input formControlName="pregunta" name="pregunta_pregunta" type="text" class="form-control" id="pregunta_pregunta" required>
+            </div>
+            <div class="form-group">
+              <label for="respuesta_respuesta1">respuesta1</label>
+              <input formControlName="respuesta1" name="respuesta_respuesta1" type="text" class="form-control col-6 d-inline" id="respuesta_respuesta1" required>
+                <label for="valor_valor1">puntos</label>
+                <input formControlName="valor1" name="valor_valor1" type="text" class="form-control col-2  d-inline" id="valor_valor1" required>
+              </div>
+              <div class="form-group">
+                  <label for="respuesta_respuesta2">respuesta2</label>
+                  <input formControlName="respuesta2" name="respuesta_respuesta2" type="text" class="form-control col-6 d-inline" id="respuesta_respuesta2" required>
+                    <label for="valor_valor2">puntos</label>
+                    <input formControlName="valor2" name="valor_valor2" type="text" class="form-control col-2  d-inline" id="valor_valor2" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="respuesta_respuesta3">respuesta3</label>
+                      <input formControlName="respuesta3" name="respuesta_respuesta3" type="text" class="form-control col-6 d-inline" id="respuesta_respuesta3" required>
+                        <label for="valor_valor3">puntos</label>
+                        <input formControlName="valor3" name="valor_valor3" type="text" class="form-control col-2  d-inline" id="valor_valor3" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="respuesta_respuesta4">respuesta4</label>
+                          <input formControlName="respuesta4" name="respuesta_respuesta4" type="text" class="form-control col-6 d-inline" id="respuesta_respuesta4" required>
+                            <label for="valor_valor4">puntos</label>
+                            <input formControlName="valor4" name="valor_valor4" type="text" class="form-control col-2  d-inline" id="valor_valor4" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="respuesta_respuesta5">respuesta5</label>
+                              <input formControlName="respuesta5" name="respuesta_respuesta5" type="text" class="form-control col-6 d-inline" id="respuesta_respuesta5" required>
+                                <label for="valor_valor5">puntos</label>
+                                <input formControlName="valor5" name="valor_valor5" type="text" class="form-control col-2  d-inline" id="valor_valor5" required>
+                              </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark text-white" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="form_nuevapregunta.invalid" (click)="agregarpreguntas()">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+
+      <div class="panel-heading"></div>
+      <div class="panel-body">
+        <p> </p>
+      </div>
+  <div class="container-fluid">
+      <table class="table table-hover">
+        <thead class="thead-inverse">
+          <tr>
+              <h1> <span class="badge badge-secondary">todas las preguntas</span></h1>
+          
+  
+  
+          </tr>
+          </thead>
+          <tbody id=tablita>
+            <tr *ngFor="let pre of preguntas, let index = index ">
+              <td >{{pre.pregunta}}</td>
+              <td><button (click)="enviarpregunta(pre.id)"  class="btn btn-primary" style="margin-top: -10px;">Enviar</button></td> 
+              
+            </tr>
+            
+          </tbody>
+      </table>
+
+    </div>
+    </div>
